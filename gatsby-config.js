@@ -7,9 +7,9 @@
 module.exports = {
 
     siteMetadata: {
-        title: '',
-        description: '',
-        author: '',
+        title: 'BackRads',
+        description: 'Lorem ipsum...',
+        author: 'John Smith',
     },
 
     plugins: [
