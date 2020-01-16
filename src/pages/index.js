@@ -1,22 +1,35 @@
 import React from "react"
 
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
-import SimpleHero from '../components/SimpleHero';
+import StyledHero from '../components/StyledHero';
 import Banner from '../components/Banner';
 import About from '../components/home/About';
 import Services from '../components/home/Services';
 
-const Index = () => {
+export const queryHeroBackgroud = graphql`
+    query{
+        heroBackgroud:file(relativePath:{eq:"defaultBcg.jpeg"}){
+            childImageSharp{
+                fluid(maxWidth: 1080, quality: 70){
+                    ...GatsbyImageSharpFluid_withWebp
+                }
+            }
+        }
+    }
+`;
+
+
+const Index = ({data}) => {
     return(
         <Layout>
 
-            <SimpleHero>
+            <StyledHero home="true" img={data.heroBackgroud.childImageSharp.fluid}>
                 <Banner title="continue exploring" info="Lorem ipsum dolor sit amet...">
                     <Link to="/tours" className="btn-white">explore tours</Link>
                 </Banner>
-            </SimpleHero>
+            </StyledHero>
 
             <About/>
 
