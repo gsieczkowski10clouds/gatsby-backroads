@@ -8,6 +8,7 @@ import StyledHero from '../components/StyledHero';
 import Banner from '../components/Banner';
 import About from '../components/home/About';
 import Services from '../components/home/Services';
+import FeaturedTours from '../components/home/FeaturedTours';
 
 export const queryHeroBackgroud = graphql`
     query{
@@ -35,6 +36,8 @@ const index = ({data}) => {
             <About/>
 
             <Services/>
+
+            <FeaturedTours/>
 
         </Layout>
     )
