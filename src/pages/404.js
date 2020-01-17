@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Link } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 import Layout from "../components/Layout"
 import Banner from '../components/Banner';
@@ -13,7 +13,7 @@ const Error404 = () => {
 
             <head className={style.error}>
                 <Banner title="oops it's dead end">
-                    <Link to="/" className="btn-white">back to home page</Link>
+                    <AniLink fade to="/" className="btn-white">back to home page</AniLink>
                 </Banner>
             </head>
 

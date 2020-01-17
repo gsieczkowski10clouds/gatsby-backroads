@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from '../components/Layout';
 import Banner from "../components/Banner"
@@ -22,9 +22,7 @@ const Blog = ({data}) => {
         <Layout>
 
             <StyledHero img={data.heroBackgroud.childImageSharp.fluid}>
-                <Banner title="continue exploring" info="Lorem ipsum dolor sit amet...">
-                    <Link to="/tours" className="btn-white">explore tours</Link>
-                </Banner>
+                <Banner title="continue exploring" info="Lorem ipsum dolor sit amet..."></Banner>
             </StyledHero>
 
         </Layout>

@@ -1,6 +1,7 @@
 import React from "react"
 
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 import Layout from '../components/Layout';
 import StyledHero from '../components/StyledHero';
@@ -27,7 +28,7 @@ const Index = ({data}) => {
 
             <StyledHero home="true" img={data.heroBackgroud.childImageSharp.fluid}>
                 <Banner title="continue exploring" info="Lorem ipsum dolor sit amet...">
-                    <Link to="/tours" className="btn-white">explore tours</Link>
+                    <AniLink fade to="/tours" className="btn-white">explore tours</AniLink>
                 </Banner>
             </StyledHero>
 
