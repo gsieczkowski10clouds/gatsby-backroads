@@ -2,7 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from '../components/Layout';
-import Banner from "../components/Banner"
 import StyledHero from "../components/StyledHero"
 
 export const queryHeroBackgroud = graphql`
@@ -17,16 +16,14 @@ export const queryHeroBackgroud = graphql`
     }
 `;
 
-const Tours = ({data}) => {
+const tours = ({data}) => {
     return(
         <Layout>
 
-            <StyledHero img={data.heroBackgroud.childImageSharp.fluid}>
-                <Banner title="continue exploring" info="Lorem ipsum dolor sit amet..."></Banner>
-            </StyledHero>
+            <StyledHero img={data.heroBackgroud.childImageSharp.fluid} />
 
         </Layout>
     )
 };
 
-export default Tours;
+export default tours;

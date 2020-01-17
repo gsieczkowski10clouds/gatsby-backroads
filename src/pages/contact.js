@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from '../components/Layout';
 import StyledHero from "../components/StyledHero"
-import Banner from "../components/Banner"
+import Contact from '../components/Contact/Contact';
 
 export const queryHeroBackgroud = graphql`
     query{
@@ -17,18 +17,15 @@ export const queryHeroBackgroud = graphql`
     }
 `;
 
-const Contact = ({data}) => {
+const contact = ({data}) => {
     return(
         <Layout>
 
-
-            <StyledHero img={data.heroBackgroud.childImageSharp.fluid}>
-                <Banner title="continue exploring" info="Lorem ipsum dolor sit amet..."></Banner>
-            </StyledHero>
-
+            <StyledHero img={data.heroBackgroud.childImageSharp.fluid} />
+            <Contact/>
 
         </Layout>
     )
 };
 
-export default Contact;
+export default contact;

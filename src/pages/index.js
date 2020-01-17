@@ -22,7 +22,7 @@ export const queryHeroBackgroud = graphql`
 `;
 
 
-const Index = ({data}) => {
+const index = ({data}) => {
     return(
         <Layout>
 
@@ -40,4 +40,4 @@ const Index = ({data}) => {
     )
 };
 
-export default Index;
+export default index;
