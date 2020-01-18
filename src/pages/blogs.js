@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 
 import Layout from '../components/Layout';
 import StyledHero from "../components/StyledHero"
-import BlogList from '../components/blog/BlogList';
 
 export const queryHeroBackgroud = graphql`
     query{
@@ -17,16 +16,14 @@ export const queryHeroBackgroud = graphql`
     }
 `;
 
-const Blog = ({data}) => {
+const Blogs = ({data}) => {
     return(
         <Layout>
 
             <StyledHero img={data.heroBackgroud.childImageSharp.fluid} />
 
-            <BlogList/>
-
         </Layout>
     )
 };
 
-export default Blog;
+export default Blogs;
