@@ -45,4 +45,21 @@ exports.createPages = async( {graphql, actions} ) => {
        })
     });
 
+    const blogListTemplate = path.resolve('./src/templates/blog-list-template.js');
+    const posts = data.posts.edges;
+    const postsPerPage = 5;
+    const postsMaxPage = Math.ceil(posts.length/postsPerPage);
+    Array.from({length:postsMaxPage}).forEach( (_, index) => {
+        createPage({
+            path: index === 0 ? `/blogs` : `/blogs/${index+1}`,
+            component: blogListTemplate,
+            context: {
+                limit: postsPerPage,
+                skip: index * postsPerPage,
+                maxPage: postsMaxPage,
+                currentPage: index + 1,
+            }
+        })
+    });
+
 }

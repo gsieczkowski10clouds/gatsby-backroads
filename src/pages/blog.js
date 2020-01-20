@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from '../components/Layout';
-import StyledHero from "../components/StyledHero"
+import StyledHero from "../components/StyledHero";
 import BlogList from '../components/blog/BlogList';
 
 export const queryHeroBackgroud = graphql`
