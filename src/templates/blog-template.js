@@ -5,6 +5,7 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import Layout from '../components/Layout';
+import SEO from "../components/SEO";
 
 import styles from '../css/single-blog.module.css';
 
@@ -29,7 +30,7 @@ const BlogTemplate = ({data}) => {
                 return (
                     <div>
                         {node.data.target.fields.title ? <h3>{node.data.target.fields.title["en-US"]}</h3> : null}
-                        <img width="400" src={node.data.target.fields.file["en-US"].url} />
+                        <img width="400" src={node.data.target.fields.file["en-US"].url} alt="image" />
                     </div>
                 )
             },
@@ -40,7 +41,7 @@ const BlogTemplate = ({data}) => {
                 return (
                     <div>
                         <h1>{title["en-US"]}</h1>
-                        <img width="400" src={image["en-US"].fields.file["en-US"].url} />
+                        <img width="400" src={image["en-US"].fields.file["en-US"].url} alt="image" />
                         {documentToReactComponents(text["en-US"])}
                     </div>
                 )
@@ -50,6 +51,8 @@ const BlogTemplate = ({data}) => {
 
     return(
         <Layout>
+
+            <SEO title={title} />
 
             <section className={styles.blog}>
 

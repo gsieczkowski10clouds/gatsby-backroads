@@ -9,6 +9,7 @@ import Banner from '../components/Banner';
 import About from '../components/home/About';
 import Services from '../components/home/Services';
 import FeaturedTours from '../components/home/FeaturedTours';
+import SEO from '../components/SEO';
 
 export const queryHeroBackgroud = graphql`
     query{
@@ -26,6 +27,8 @@ export const queryHeroBackgroud = graphql`
 const index = ({data}) => {
     return(
         <Layout>
+
+            <SEO title="Home" description="Lorem..." />
 
             <StyledHero home="true" img={data.heroBackgroud.childImageSharp.fluid}>
                 <Banner title="continue exploring" info="Lorem ipsum dolor sit amet...">

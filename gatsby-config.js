@@ -14,6 +14,9 @@ module.exports = {
         title: 'BackRads',
         description: 'Lorem ipsum...',
         author: 'John Smith',
+        twitterUserName: '@john_smilga',
+        image: '/defaultBcg.jpeg',
+        siteUrl: 'https://gskgrek-gatsby-backroads.netlify.com',
     },
 
     plugins: [
@@ -25,6 +28,8 @@ module.exports = {
         'gatsby-transformer-sharp',
         'gatsby-plugin-sharp',
         'gatsby-plugin-transition-link',
+        'gatsby-plugin-react-helmet',
+        'gatsby-plugin-sitemap',
 
         {
             resolve: 'gatsby-source-filesystem',

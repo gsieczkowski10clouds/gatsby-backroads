@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import Layout from '../components/Layout';
 import StyledHero from "../components/StyledHero";
 import BlogList from '../components/blog/BlogList';
+import SEO from '../components/SEO';
 
 export const queryHeroBackgroud = graphql`
     query{
@@ -20,6 +21,8 @@ export const queryHeroBackgroud = graphql`
 const Blog = ({data}) => {
     return(
         <Layout>
+
+            <SEO title="Blog" />
 
             <StyledHero img={data.heroBackgroud.childImageSharp.fluid} />
 

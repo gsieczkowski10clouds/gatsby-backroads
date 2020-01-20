@@ -7,7 +7,7 @@ import styles from '../../css/items.module.css';
 
 const ToursList = ({tours}) => {
     
-    const [ toursList, setToursList ] = useState([]);
+    const setToursList = useState([])[1];
     const [ sortedTours, setSortedTours ] = useState([]);
 
     useEffect( () => {

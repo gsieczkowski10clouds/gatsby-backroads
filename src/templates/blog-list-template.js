@@ -7,6 +7,7 @@ import Layout from '../components/Layout';
 import BlogCard from '../components/blog/BlogCard';
 import Title from '../components/Title';
 import StyledHero from "../components/StyledHero";
+import SEO from '../components/SEO';
 
 import styles from '../css/blog.module.css';
 
@@ -52,6 +53,8 @@ const BlogListTemplate = (props) => {
 
     return(
         <Layout>
+
+            <SEO title="Blogs" />
 
             <StyledHero img={data.heroBackgroud.childImageSharp.fluid} />
 

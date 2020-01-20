@@ -4,12 +4,15 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 import Layout from "../components/Layout"
 import Banner from '../components/Banner';
+import SEO from '../components/SEO';
 
 import style from '../css/error.module.css';
 
 const Error404 = () => {
     return(
         <Layout>
+
+            <SEO title="Error" />
 
             <head className={style.error}>
                 <Banner title="oops it's dead end">
