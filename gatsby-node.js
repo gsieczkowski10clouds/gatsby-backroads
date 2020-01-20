@@ -13,17 +13,36 @@ exports.createPages = async( {graphql, actions} ) => {
                     }
                 }
             }
+            posts: allContentfulPost {
+                edges {
+                    node {
+                        slug
+                    }
+                }
+            }
         }
-    `)
+    `);
 
+    const tourTemplate = path.resolve('./src/templates/tour-template.js');
     data.tours.edges.forEach( ({node}) => {
         createPage({
             path: `/tours/${node.slug}`,
-            component: path.resolve('./src/templates/tour-template.js'),
+            component: tourTemplate,
             context: {
                 slug: node.slug,
             }
         })
+    });
+
+    const blogTemplate = path.resolve('./src/templates/blog-template.js');
+    data.posts.edges.forEach( ({node}) => {
+       createPage({
+           path: `/blog/${node.slug}`,
+           component: blogTemplate,
+           context: {
+               slug: node.slug,
+           }
+       })
     });
 
 }
