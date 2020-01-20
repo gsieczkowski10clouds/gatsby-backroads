@@ -47,6 +47,15 @@ module.exports = {
             },
         },
 
+        {
+            resolve: 'gatsby-plugin-robots-txt',
+            options: {
+                host: 'https://gskgrek-gatsby-backroads.netlify.com',
+                sitemap: 'https://gskgrek-gatsby-backroads.netlify.com/sitemap.xml',
+                policy: [{ userAgent: '*', allow: '/' }]
+            }
+        },
+
     ],
 
 }
